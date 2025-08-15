@@ -1,0 +1,29 @@
+.leaf {
+    width: 40px;
+    height: 40px;
+    background-image: url('/images/leaf.png'); /* Make sure leaf.png is inside public/images/ */
+    background-size: cover;
+    position: absolute;
+    animation: fall 15s linear infinite;
+    opacity: 0.3;
+    left: calc(100% * var(--i) / 10);
+    top: -10%;
+    z-index: 0;
+  }
+  
+  .leaf:nth-child(odd) {
+    animation-duration: 20s;
+  }
+  .leaf:nth-child(even) {
+    animation-duration: 12s;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(120vh) rotate(360deg);
+    }
+  }
+  
