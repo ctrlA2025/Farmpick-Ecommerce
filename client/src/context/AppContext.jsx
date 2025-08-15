@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
   baseURL:
     import.meta.env.MODE === "production"
       ? import.meta.env.VITE_BACKEND_URL
-      : "https://fp-mocha.vercel.app",
+      : "https://farmpickshope-plum.vercel.app/",
   withCredentials: true,
 });
 
@@ -29,7 +29,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchSeller = async () => {
     try {
-      const { data } = await axiosInstance.get("https://fp-mocha.vercel.app/api/seller/is-auth");
+      const { data } = await axiosInstance.get("https://farmpickshope-plum.vercel.app/api/seller/is-auth");
       setIsSeller(data.success);
     } catch {
       setIsSeller(false);
@@ -38,7 +38,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const { data } = await axiosInstance.get("https://fp-mocha.vercel.app/api/user/is-auth");
+      const { data } = await axiosInstance.get("https://farmpickshope-plum.vercel.app/api/user/is-auth");
       if (data.success) {
         setUser(data.user);
         setCartItems(data.user.cartItems || {});
@@ -49,7 +49,7 @@ export const AppContextProvider = ({ children }) => {
   };
 
   const fetchCategories = async () => {
-    const { data } = await axios.get('https://fp-mocha.vercel.app/api/category/all');
+    const { data } = await axios.get('https://farmpickshope-plum.vercel.app/api/category/all');
     if (data.success) {
       setCategories(data.categories);
     }
@@ -59,7 +59,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axiosInstance.get("https://fp-mocha.vercel.app/api/product/list");
+      const { data } = await axiosInstance.get("https://farmpickshope-plum.vercel.app/api/product/list");
       if (data.success) {
         setProducts(data.products);
       } else {
@@ -127,7 +127,7 @@ export const AppContextProvider = ({ children }) => {
   useEffect(() => {
     const updateCart = async () => {
       try {
-        const { data } = await axiosInstance.post("https://fp-mocha.vercel.app/api/cart/update", {
+        const { data } = await axiosInstance.post("https://farmpickshope-plum.vercel.app/api/cart/update", {
           userId: user._id,
           cartItems,
         });
