@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
   baseURL:
     import.meta.env.MODE === "production"
       ? import.meta.env.VITE_BACKEND_URL
-      : "https://farmpickshope-plum.vercel.app/",
+      : "https://farmpickshope-plum.vercel.app",
   withCredentials: true,
 });
 

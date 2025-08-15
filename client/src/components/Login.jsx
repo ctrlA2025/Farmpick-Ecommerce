@@ -61,7 +61,7 @@ const Login = () => {
 
         try {
             const { data } = await axios.post(
-                'https://farmpickshope-plum.vercel.app/api/user/register',
+                '/api/user/register',
                 { name, email, password, mobile },
                 { withCredentials: true }
             );
@@ -84,7 +84,7 @@ const Login = () => {
 
         try {
             const { data } = await axios.post(
-                'https://farmpickshope-plum.vercel.app/api/user/login',
+                '/api/user/login',
                 { email, password },
                 { withCredentials: true }
             );

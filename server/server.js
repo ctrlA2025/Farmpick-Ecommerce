@@ -21,7 +21,7 @@ await connectCloudinary();
 // ✅ Only use CORS once — this is the correct one
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://farmpick-shop.vercel.app/'
+  'https://farmpick-shop.vercel.app'
 ];
 
 app.use(cors({
